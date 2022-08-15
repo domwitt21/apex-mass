@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApexObj >  ScheduledPlaylistItem</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">ApexObj Reference</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/danfoy/apexobj"
+                        >
+                            GitHub
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://www.npmjs.com/package/apexobj"
+                        >
+                            npm
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="ApexObj.html">ApexObj</a></li><li><a href="Playlist.html">Playlist</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="RotatingPlaylist.html">RotatingPlaylist</a></li><li><a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a></li><li><a href="Season.html">Season</a></li><li><a href="SingleItemPlaylist.html">SingleItemPlaylist</a></li><li><a href="SplitPlaylist.html">SplitPlaylist</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Class</p>
+                    <h1>ScheduledPlaylistItem</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>ScheduledPlaylistItem<span class="signature">(itemData, playlist)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>A <a href="PlaylistItem.html">PlaylistItem</a> with a designated start and end time.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
+
+
+    
+    <h4 class="name" id="ScheduledPlaylistItem">
+        <a class="href-link" href="#ScheduledPlaylistItem">#</a>
+        
+        <span class="code-name">
+            
+                new ScheduledPlaylistItem<span class="signature">(itemData, playlist)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>itemData</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">object</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>object containing item data</p></td>
+</tr>
+
+  
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>mapName</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">string</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>the name of the map</p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>mapDuration</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">number</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>the duration of the map in milliseconds</p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>startTime</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">Date</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>the time this map rotation starts</p></td>
+</tr>
+
+  
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>playlist</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="Playlist.html">Playlist</a></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>the parent playlist of this item</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ScheduledPlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ScheduledPlaylistItem.js.html">classes/ScheduledPlaylistItem.js</a>, <a href="classes_ScheduledPlaylistItem.js.html#line9">line 9</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="PlaylistItem.html">PlaylistItem</a></li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">number</code>
+
+
+    </span>
+
+<h4 class="name" id="duration">
+    <a class="href-link" href="#duration">#</a>
+    
+    <span class="code-name">
+        duration
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns the duration of this map rotation in milliseconds.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="PlaylistItem.html#duration">PlaylistItem#duration</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_PlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_PlaylistItem.js.html">classes/PlaylistItem.js</a>, <a href="classes_PlaylistItem.js.html#line44">line 44</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Date</code>
+
+
+    </span>
+
+<h4 class="name" id="endTime">
+    <a class="href-link" href="#endTime">#</a>
+    
+    <span class="code-name">
+        endTime
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>When this map rotation ends</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ScheduledPlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ScheduledPlaylistItem.js.html">classes/ScheduledPlaylistItem.js</a>, <a href="classes_ScheduledPlaylistItem.js.html#line31">line 31</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">boolean</code>
+
+
+    </span>
+
+<h4 class="name" id="LTM">
+    <a class="href-link" href="#LTM">#</a>
+    
+    <span class="code-name">
+        LTM
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Whether this item is from a playlist which is an <a href="Playlist.html#LTM">LTM</a>.
+The property only exists when its value is true.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="PlaylistItem.html#LTM">PlaylistItem#LTM</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_PlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_PlaylistItem.js.html">classes/PlaylistItem.js</a>, <a href="classes_PlaylistItem.js.html#line57">line 57</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">string</code>
+
+
+    </span>
+
+<h4 class="name" id="map">
+    <a class="href-link" href="#map">#</a>
+    
+    <span class="code-name">
+        map
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns the name of the map for this item (e.g. <code>King's Canyon</code>).</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="PlaylistItem.html#map">PlaylistItem#map</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_PlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_PlaylistItem.js.html">classes/PlaylistItem.js</a>, <a href="classes_PlaylistItem.js.html#line38">line 38</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">string</code>
+
+
+    </span>
+
+<h4 class="name" id="mode">
+    <a class="href-link" href="#mode">#</a>
+    
+    <span class="code-name">
+        mode
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns the <a href="Playlist.html#mode">mode</a> of the <a href="Playlist.html">Playlist</a> to
+which this item belongs (e.g. <code>Play Apex</code>, <code>Ranked Leagues</code>)</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="PlaylistItem.html#mode">PlaylistItem#mode</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_PlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_PlaylistItem.js.html">classes/PlaylistItem.js</a>, <a href="classes_PlaylistItem.js.html#line32">line 32</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">boolean</code>
+
+
+    </span>
+
+<h4 class="name" id="ranked">
+    <a class="href-link" href="#ranked">#</a>
+    
+    <span class="code-name">
+        ranked
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Whether the <a href="Playlist.html">Playlist</a> this item is from is
+<a href="Playlist.html#ranked">ranked</a>. The property only exists when its
+value is true.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="PlaylistItem.html#ranked">PlaylistItem#ranked</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_PlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_PlaylistItem.js.html">classes/PlaylistItem.js</a>, <a href="classes_PlaylistItem.js.html#line46">line 46</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">string</code>
+
+
+    </span>
+
+<h4 class="name" id="replaces">
+    <a class="href-link" href="#replaces">#</a>
+    
+    <span class="code-name">
+        replaces
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>When the item's parent <a href="Playlist.html">Playlist</a> is a 'takeover LTM'-type
+playlist, this property returns the name of the playlist this item
+replaces. This property only exists if the parent playlist has the
+<a href="Playlist.html#replaces">replaces</a> property.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="PlaylistItem.html#replaces">PlaylistItem#replaces</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_PlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_PlaylistItem.js.html">classes/PlaylistItem.js</a>, <a href="classes_PlaylistItem.js.html#line77">line 77</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Date</code>
+
+
+    </span>
+
+<h4 class="name" id="startTime">
+    <a class="href-link" href="#startTime">#</a>
+    
+    <span class="code-name">
+        startTime
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>When this map rotation starts</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ScheduledPlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ScheduledPlaylistItem.js.html">classes/ScheduledPlaylistItem.js</a>, <a href="classes_ScheduledPlaylistItem.js.html#line25">line 25</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">boolean</code>
+
+
+    </span>
+
+<h4 class="name" id="takeover">
+    <a class="href-link" href="#takeover">#</a>
+    
+    <span class="code-name">
+        takeover
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Whether the playlist this item belongs to is a <a href="Playlist.html#takeover">takeover</a>
+<a href="Playlist.html#LTM">LTM</a>. This property only exists when its value is true.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="PlaylistItem.html#takeover">PlaylistItem#takeover</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_PlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_PlaylistItem.js.html">classes/PlaylistItem.js</a>, <a href="classes_PlaylistItem.js.html#line67">line 67</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">number</code>
+
+
+    </span>
+
+<h4 class="name" id="timeRemaining">
+    <a class="href-link" href="#timeRemaining">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+    
+    <span class="code-name">
+        timeRemaining
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>The time until (or since the end of) this map rotation. Returns a negative
+value if the end of this rotation has already passed when called.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ScheduledPlaylistItem.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ScheduledPlaylistItem.js.html">classes/ScheduledPlaylistItem.js</a>, <a href="classes_ScheduledPlaylistItem.js.html#line42">line 42</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+
+</body>
+</html>

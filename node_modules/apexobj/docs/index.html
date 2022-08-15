@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApexObj >  Home</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">ApexObj Reference</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/danfoy/apexobj"
+                        >
+                            GitHub
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://www.npmjs.com/package/apexobj"
+                        >
+                            npm
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="ApexObj.html">ApexObj</a></li><li><a href="Playlist.html">Playlist</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="RotatingPlaylist.html">RotatingPlaylist</a></li><li><a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a></li><li><a href="Season.html">Season</a></li><li><a href="SingleItemPlaylist.html">SingleItemPlaylist</a></li><li><a href="SplitPlaylist.html">SplitPlaylist</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p></p>
+                    <h1>Home</h1>
+                </header>
+                
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>ApexObj</h1>
+<p>Provides a cached instance of an object providing information on map rotation timings for Apex Legends via properties, computed properties, and methods.</p>
+<h2>Beta information</h2>
+<p>ApexObj is a nodejs module which provides data about the game Apex Legends by Respawn Entertainment. It was spun off from a Discord bot when the functionality grew enough to warrant it. The Discord bot is also being rewritten from the ground up, and this project is under active development alongside it.</p>
+<p>Full documentation is a target of the v1.0.0 release. There may be frequent breaking changes before the project reaches the v1 milestone.</p>
+<h2>Basic usage</h2>
+<p>Install via NPM</p>
+<pre class="prettyprint source lang-sh"><code>npm install --save apexobj
+</code></pre>
+<p>Use as a nodejs module</p>
+<pre class="prettyprint source lang-js"><code>const Apex = require('apexobj')
+</code></pre>
+<p>Access data about Apex Legends map locations via the properties and methods on the object.</p>
+<pre class="prettyprint source lang-js"><code>Apex.seasons
+// -> list of seasons for which data is available
+
+Apex.currentMaps
+// -> array of PlaylistItem/ScheduledPlaylistItem(s) describing current maps, or null if no data
+
+Apex.nextMaps
+// -> as above but with the upcoming map rotations
+
+Apex.currentSeason
+// -> a Season object describing the current season inc. dates, available playlists etc
+
+Apex.getMapsByDate(date)
+// -> the map for a specific date in ISO format, e.g. 2022-03-22T17:00:00Z
+
+Apex.getSeasonByDate(date)
+// -> as above, but for seasons
+</code></pre>
+<p>Returned objects are filterable also have their own properties and methods for convenience:</p>
+<pre class="prettyprint source lang-js"><code>const season11 = Apex.seasons.find(season => season.id === 11);
+console.log(`Limited Time Modes for ${season11.name}:`, season11.LTMs)
+</code></pre>
+<p>There are several computed properties and methods for each class. These will be documented using JSDoc for the v1.0.0 release and published as an online reference. Until then they are fairly self-describing within the code.</p></article>
+    </section>
+
+
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+
+</body>
+</html>

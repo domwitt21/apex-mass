@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApexObj >  ApexObj</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">ApexObj Reference</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/danfoy/apexobj"
+                        >
+                            GitHub
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://www.npmjs.com/package/apexobj"
+                        >
+                            npm
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="ApexObj.html">ApexObj</a></li><li><a href="Playlist.html">Playlist</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="RotatingPlaylist.html">RotatingPlaylist</a></li><li><a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a></li><li><a href="Season.html">Season</a></li><li><a href="SingleItemPlaylist.html">SingleItemPlaylist</a></li><li><a href="SplitPlaylist.html">SplitPlaylist</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Class</p>
+                    <h1>ApexObj</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>ApexObj<span class="signature">(seasonsData)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>This is the base class for the module, and the first port of call for making
+queries. All data available for the module is parsed into an object, for
+which this class is the starting point.</p>
+<p>It parses information from <code>/data/seasons.json</code> and uses this to construct
+an array of <a href="Season.html">Season</a> objects. Each is comprised of properties (and
+psuedo, 'read only' properties retrieved using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">getters</a>)
+containing useful information such as start and end times, and an array
+of playlists available during the season, each constructed from a class
+which extends the base <a href="Playlist.html">Playlist</a> class. Each season and playlist
+contains further methods for querying current maps and modes available at
+the time the methods were called or at some specified date.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
+
+
+    
+    <h4 class="name" id="ApexObj">
+        <a class="href-link" href="#ApexObj">#</a>
+        
+        <span class="code-name">
+            
+                new ApexObj<span class="signature">(seasonsData)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Creates the base object for the module. Throws an error if no data is
+provided.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>seasonsData</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type">object</code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>data parsed from <code>/data/seasons.json</code></p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line20">line 20</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Array.&lt;<a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a>></code>
+
+
+    </span>
+
+<h4 class="name" id="currentLTMs">
+    <a class="href-link" href="#currentLTMs">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+            <span class='tag'>nullable</span>
+        
+    
+    <span class="code-name">
+        currentLTMs
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns an array of the currently-running limited time modes for the
+current season, or <a href="global.html#null">null</a> if none found.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line98">line 98</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Array.&lt;<a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a>></code>
+
+
+    </span>
+
+<h4 class="name" id="currentMaps">
+    <a class="href-link" href="#currentMaps">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+            <span class='tag'>nullable</span>
+        
+    
+    <span class="code-name">
+        currentMaps
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns an array of current maps (<a href="PlaylistItem.html">PlaylistItem</a>s), or
+<a href="global.html#null">null</a> if not called during a season or if no maps are found.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line72">line 72</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type"><a href="Season.html">Season</a></code>
+
+
+    </span>
+
+<h4 class="name" id="currentSeason">
+    <a class="href-link" href="#currentSeason">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+            <span class='tag'>nullable</span>
+        
+    
+    <span class="code-name">
+        currentSeason
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns the current <a href="Season.html">Season</a>, or <a href="global.html#null">null</a> if outside of the date
+boundaries for available seasons.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line46">line 46</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Array.&lt;<a href="Playlist.html">Playlist</a>></code>
+
+
+    </span>
+
+<h4 class="name" id="currentTakeovers">
+    <a class="href-link" href="#currentTakeovers">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+            <span class='tag'>nullable</span>
+        
+    
+    <span class="code-name">
+        currentTakeovers
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns an array of the current limited time modes which replace
+'standard' modes, or <a href="global.html#null">null</a> if none found.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line111">line 111</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Array.&lt;<a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a>></code>
+
+
+    </span>
+
+<h4 class="name" id="nextMaps">
+    <a class="href-link" href="#nextMaps">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+            <span class='tag'>nullable</span>
+        
+    
+    <span class="code-name">
+        nextMaps
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns an array of the upcoming maps (as <a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a>s)
+or <code>null</code> if none found.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line85">line 85</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type"><a href="Season.html">Season</a></code>
+
+
+    </span>
+
+<h4 class="name" id="nextSeason">
+    <a class="href-link" href="#nextSeason">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+            <span class='tag'>nullable</span>
+        
+    
+    <span class="code-name">
+        nextSeason
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Returns the next <a href="Season.html">Season</a> via Season#getSeasonByDate, or
+<a href="global.html#null">null</a> if no data available.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line60">line 60</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Array.&lt;<a href="Season.html">Season</a>></code>
+
+
+    </span>
+
+<h4 class="name" id="seasons">
+    <a class="href-link" href="#seasons">#</a>
+    
+    <span class="code-name">
+        seasons
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Array of seasons</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line35">line 35</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="getMapsByDate">
+        <a class="href-link" href="#getMapsByDate">#</a>
+        
+        <span class="code-name">
+            
+                getMapsByDate<span class="signature">(date<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Returns an array of the current maps (<a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a>s)
+for the given date, or <a href="global.html#null">null</a> if none found. Uses the current date
+if none provided.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>date</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#parseableDate">parseableDate</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          new Date()
+      
+      </td>
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line138">line 138</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="getSeasonByDate">
+        <a class="href-link" href="#getSeasonByDate">#</a>
+        
+        <span class="code-name">
+            
+                getSeasonByDate<span class="signature">(date<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; (nullable) {<a href="Season.html">Season</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Returns the season for the given date, or <a href="global.html#null">null</a> if none found. Uses
+the current date if none provided.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>date</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#parseableDate">parseableDate</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          new Date()
+      
+      </td>
+  
+
+  <td class="description last"><p>the date to query</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_ApexObj.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_ApexObj.js.html">classes/ApexObj.js</a>, <a href="classes_ApexObj.js.html#line123">line 123</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="Season.html">Season</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+
+</body>
+</html>

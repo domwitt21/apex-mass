@@ -1,0 +1,224 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApexObj >  classes/PlaylistItem.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">ApexObj Reference</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/danfoy/apexobj"
+                        >
+                            GitHub
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://www.npmjs.com/package/apexobj"
+                        >
+                            npm
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="ApexObj.html">ApexObj</a></li><li><a href="Playlist.html">Playlist</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="RotatingPlaylist.html">RotatingPlaylist</a></li><li><a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a></li><li><a href="Season.html">Season</a></li><li><a href="SingleItemPlaylist.html">SingleItemPlaylist</a></li><li><a href="SplitPlaylist.html">SplitPlaylist</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>classes/PlaylistItem.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Represents an item in a playlist - i.e. a map rotation. Provides a duration
+ * property but no start and end times - this is because they are sometimes
+ * not available internally, e.g. when building a {@link RotatingPlaylist} but
+ * before the start/end times have been calculated. Items for which this
+ * information is available should instead be created as instances of the child
+ * class {@link ScheduledPlaylistItem}.
+ */
+class PlaylistItem {
+    /**
+     * Creates a playlist item (aka a 'map rotation').
+     *
+     * @param {object} item data about this item
+     * @param {string} item.mapName name of the map for this item
+     * @param {number} item.mapDuration duration of this rotation in milliseconds
+     * @param {Playlist} playlist the parent playlist of this item
+     */
+    constructor({mapName, mapDuration}, playlist) {
+
+        // Validaton
+        if (typeof mapName !== 'string' || mapName == '')
+            throw new Error('mapName String required and not provided');
+        if (typeof playlist.mode !== 'string' || playlist.mode == '')
+            throw new Error('playlist.mode String required and not provided');
+
+        /**
+         * Returns the [mode]{@link Playlist#mode} of the {@link Playlist} to
+         * which this item belongs (e.g. `Play Apex`, `Ranked Leagues`)
+         *
+         * @type {string}
+         */
+        this.mode       = playlist.mode;
+
+        /**
+         * Returns the name of the map for this item (e.g. `King's Canyon`).
+         * @type {string}
+         */
+        this.map        = mapName;
+
+        /**
+         * Returns the duration of this map rotation in milliseconds.
+         * @type {number}
+         */
+        this.duration   = mapDuration;
+
+        /**
+         * Whether the {@link Playlist} this item is from is
+         * [ranked]{@link Playlist#ranked}. The property only exists when its
+         * value is true.
+         *
+         * @member {boolean} [ranked]
+         * @memberof PlaylistItem
+         * @instance
+         */
+        if (playlist.ranked)    this.ranked     = true;
+
+        /**
+         * Whether this item is from a playlist which is an [LTM]{@link Playlist#LTM}.
+         * The property only exists when its value is true.
+         *
+         * @member {boolean} [LTM]
+         * @memberof PlaylistItem
+         * @instance
+         */
+        if (playlist.LTM)       this.LTM        = true;
+
+        /**
+         * Whether the playlist this item belongs to is a [takeover]{@link Playlist#takeover}
+         * [LTM]{@link Playlist#LTM}. This property only exists when its value is true.
+         *
+         * @member {boolean} [takeover]
+         * @memberof PlaylistItem
+         * @instance
+         */
+        if (playlist.takeover)  this.takeover   = true;
+
+        /**
+         * When the item's parent {@link Playlist} is a 'takeover LTM'-type
+         * playlist, this property returns the name of the playlist this item
+         * replaces. This property only exists if the parent playlist has the
+         * [replaces]{@link Playlist#replaces} property.
+         *
+         * @member {string} [replaces]
+         * @memberof PlaylistItem
+         * @instance
+         */
+        if (playlist.replaces)  this.replaces   = playlist.replaces;
+    };
+};
+
+module.exports = PlaylistItem;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+
+</body>
+</html>

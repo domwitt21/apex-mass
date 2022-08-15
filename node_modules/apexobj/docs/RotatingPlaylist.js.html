@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApexObj >  RotatingPlaylist.js</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">ApexObj Reference</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/danfoy/apexobj"
+                        >
+                            GitHub
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://www.npmjs.com/package/apexobj"
+                        >
+                            npm
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="ApexObj.html">ApexObj</a></li><li><a href="Playlist.html">Playlist</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="RotatingPlaylist.html">RotatingPlaylist</a></li><li><a href="Season.html">Season</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>RotatingPlaylist.js</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const { parseDate, withinDates } = require('../util');
+const Playlist = require('./Playlist');
+const PlaylistItem = require('./PlaylistItem');
+const ScheduledPlaylistItem = require('./ScheduledPlaylistItem');
+
+/**
+ * Playlist class for modes which rotate through a collection of maps at set
+ * intervals, e.g. the default 'Play Apex' mode.
+ *
+ * @extends Playlist
+ */
+class RotatingPlaylist extends Playlist {
+    /**
+     *
+     * @param {*} playlistData
+     * @param {*} seasonData
+     */
+    constructor(playlistData, seasonData) {
+        super(playlistData, seasonData);
+
+        // Argument validation
+        if(!playlistData.maps || !playlistData.mapDurations)
+            throw new Error('Requires .maps and .mapDurations from Season');
+
+        // Private properties
+        const { maps, mapDurations } = playlistData;
+
+        // Public properties
+        this.rotations = [...mapDurations.map(duration => duration * 60 * 1000)]
+            .map(duration => [...maps]
+                .map(map => new PlaylistItem({mapName: map, mapDuration: duration}, this))
+            )
+            .flat();
+    };
+
+    get rotationBaseTime() {
+        return this.baseTime
+            ? this.baseTime
+            : this.startTime;
+    };
+
+    get playlistRotationsDuration() {
+        return this.rotations
+            .reduce( (accumulator, currentItem) => {
+                return accumulator + currentItem.duration;
+            }, 0);
+    };
+
+    get currentIndex() {
+        return this.getIndexByOffset(this.getPlaylistTimeElapsed());
+    };
+
+    get currentMap() {
+        return this.getMapByDate();
+    };
+
+    get nextMap() {
+        if (new Date() &lt; this.startTime) return this.getMapByDate(this.startTime);
+        if (new Date() >= this.endTime) return null;
+        if (this.currentMap.endTime >= this.endTime) return null;
+        return this.getMapByDate(this.currentMap.endTime);
+    };
+
+    getIndexByOffset(offset) {
+        const offsets = [0, ...this.rotations
+            .map(playlistItem => playlistItem.duration)
+            .map((duration, index, arr) => arr
+                .slice(0, index + 1)
+                .reduce((acc, current) => acc + current))
+            .slice(0, this.rotations.length - 1)
+        ];
+        return this.rotations.findIndex((map, index) => offsets[index] + map.duration > offset);
+    };
+
+    getOffsetByIndex(index) {
+        const targetIndex = this.normaliseIndex(index);
+        if (targetIndex === 0) return 0;
+        return this.rotations
+            .map(rotation => rotation.duration)
+            .slice(0, targetIndex)
+            .reduce((acc, current) => current + acc);
+    };
+
+    normaliseIndex(target) {
+        if (target &lt; this.rotations.length) return target;
+        return target % this.rotations.length;
+    };
+
+    getPlaylistTimeElapsed(date) {
+        const targetDate = parseDate(date);
+        const startDate = this.rotationBaseTime;
+        const offset = (targetDate - startDate) % this.playlistRotationsDuration;
+
+        if (Number.isNaN(offset)) throw new Error(`Unable to get requested offset; got '${offset}'`);
+
+        return offset;
+    };
+
+    getMapByDate(date) {
+        const targetDate = parseDate(date);
+        if (!withinDates(this, date)) return null;
+
+        const targetIndex = this.getIndexByOffset(this.getPlaylistTimeElapsed(targetDate));
+        const targetRotation = this.rotations[targetIndex];
+        const mapTimeElapsed = this.getPlaylistTimeElapsed(targetDate) - this.getOffsetByIndex(targetIndex);
+        const targetStartTime = new Date(targetDate - mapTimeElapsed);
+
+        return new ScheduledPlaylistItem({
+            mapName: targetRotation.map,
+            mapDuration: targetRotation.duration,
+            startTime: targetStartTime,
+        }, this);
+    };
+};
+
+module.exports = RotatingPlaylist;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+
+</body>
+</html>

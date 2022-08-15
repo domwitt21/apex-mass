@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ApexObj >  SingleItemPlaylist</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+</head>
+
+
+
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">ApexObj Reference</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    Documentation
+                </a>
+                
+                 
+                    
+                        <a
+                            class="link user-link "
+                            href="https://github.com/danfoy/apexobj"
+                        >
+                            GitHub
+                        </a>
+                    
+                        <a
+                            class="link user-link "
+                            href="https://www.npmjs.com/package/apexobj"
+                        >
+                            npm
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="ApexObj.html">ApexObj</a></li><li><a href="Playlist.html">Playlist</a></li><li><a href="PlaylistItem.html">PlaylistItem</a></li><li><a href="RotatingPlaylist.html">RotatingPlaylist</a></li><li><a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a></li><li><a href="Season.html">Season</a></li><li><a href="SingleItemPlaylist.html">SingleItemPlaylist</a></li><li><a href="SplitPlaylist.html">SplitPlaylist</a></li></ul><h3><a href="global.html">Global</a></h3></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Class</p>
+                    <h1>SingleItemPlaylist</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2><span class="attribs"><span class="type-signature"></span></span>SingleItemPlaylist<span class="signature">(playlistData, seasonData)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>Playlist for modes with a single map (e.g. <a href="https://apexlegends.fandom.com/wiki/Shadow_Royale">Shadow Royale</a>).</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
+
+
+    
+    <h4 class="name" id="SingleItemPlaylist">
+        <a class="href-link" href="#SingleItemPlaylist">#</a>
+        
+        <span class="code-name">
+            
+                new SingleItemPlaylist<span class="signature">(playlistData, seasonData)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Construct a playlist which contains a single map from <a href="global.html#playlistData">playlistData</a>.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>playlistData</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#playlistData">playlistData</a></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>data for this playlist</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>seasonData</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#seasonData">seasonData</a></code>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>data for this playlist's parent <a href="Season.html">Season</a></p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_SingleItemPlaylist.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_SingleItemPlaylist.js.html">classes/SingleItemPlaylist.js</a>, <a href="classes_SingleItemPlaylist.js.html#line11">line 11</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li>playlist</li>
+    </ul>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type"><a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a></code>
+
+
+    </span>
+
+<h4 class="name" id="currentMap">
+    <a class="href-link" href="#currentMap">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+            <span class='tag'>nullable</span>
+        
+    
+    <span class="code-name">
+        currentMap
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>The <a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a> for this playlist if within date
+bounds, otherwise <a href="global.html#null">null</a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_SingleItemPlaylist.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_SingleItemPlaylist.js.html">classes/SingleItemPlaylist.js</a>, <a href="classes_SingleItemPlaylist.js.html#line43">line 43</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type"><a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a></code>
+
+
+    </span>
+
+<h4 class="name" id="nextMap">
+    <a class="href-link" href="#nextMap">#</a>
+    
+        
+            <span class='tag'>readonly</span>
+        
+            <span class='tag'>nullable</span>
+        
+    
+    <span class="code-name">
+        nextMap
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>The <a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a> for this playlist if before the
+<a href="Playlist.html#startTime">start time</a>, otherwise <a href="global.html#null">null</a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_SingleItemPlaylist.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_SingleItemPlaylist.js.html">classes/SingleItemPlaylist.js</a>, <a href="classes_SingleItemPlaylist.js.html#line57">line 57</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<code class="param-type">Array.&lt;<a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a>></code>
+
+
+    </span>
+
+<h4 class="name" id="rotations">
+    <a class="href-link" href="#rotations">#</a>
+    
+    <span class="code-name">
+        rotations
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <p>Array containing a single <a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a>. Type matches
+other classes which extend <a href="Playlist.html">Playlist</a> so that Array methods
+can be used predictably.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_SingleItemPlaylist.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_SingleItemPlaylist.js.html">classes/SingleItemPlaylist.js</a>, <a href="classes_SingleItemPlaylist.js.html#line28">line 28</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="getMapByDate">
+        <a class="href-link" href="#getMapByDate">#</a>
+        
+        <span class="code-name">
+            
+                getMapByDate<span class="signature">(date<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; (nullable) {<a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>The <a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a> for this playlist if within date
+bounds, otherwise <a href="global.html#null">null</a>.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+            <th>Default</th>
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>date</code></td>
+  
+
+  <td class="type">
+  
+      
+<code class="param-type"><a href="global.html#parseableDate">parseableDate</a></code>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+      <td class="default">
+      
+          new Date()
+      
+      </td>
+  
+
+  <td class="description last"><p>the date to target</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="classes_SingleItemPlaylist.js.html" class="button">View Source</a>
+            <span>
+                <a href="classes_SingleItemPlaylist.js.html">classes/SingleItemPlaylist.js</a>, <a href="classes_SingleItemPlaylist.js.html#line69">line 69</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>active map or <a href="global.html#null">null</a></p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<code class="param-type"><a href="ScheduledPlaylistItem.html">ScheduledPlaylistItem</a></code>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+
+</body>
+</html>
